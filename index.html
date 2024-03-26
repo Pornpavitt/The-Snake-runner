@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("/drive-download-20240322T182313Z-001/ตัวระคร,อุปกรณ์สวมใส่,อาวุธ/โปรเตอร์/180A2BA2-955C-47E5-8EF1-3EF1B77C01AF.png");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press Enter To Play the Game</h1>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                redirectToIndex();
+            }
+        });
+
+        document.addEventListener('touchstart', function(event) {
+            redirectToIndex();
+        });
+
+        function redirectToIndex() {
+            window.location.href = 'level1.html';
+        }
+    </script>
+</body>
+</html>
