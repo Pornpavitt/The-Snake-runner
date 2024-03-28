@@ -272,9 +272,9 @@ window.addEventListener('load', function () {
         context.textAlign = 'center'; // Set text alignment to center
         context.font = '30px Helvetica';
         context.fillStyle = 'black';
-        context.fillText('ขอบคุณที่ร่วมสนุกกับเรา กด Enter เพื่อเล่นอีกครั้ง', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
+        context.fillText('กด Enter เพื่อเริ่มเล่นเกม!', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
         context.fillStyle = 'white';
-        context.fillText('ขอบคุณที่ร่วมสนุกกับเรา กด Enter เพื่อเล่นอีกครั้ง', canvas.width / 2 + 2, canvas.height / 2 + 2);
+        context.fillText('กด Enter เพื่อเริ่มเล่นเกม!', canvas.width / 2 + 2, canvas.height / 2 + 2);
     }
 
     function restartGame() {
