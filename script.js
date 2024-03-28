@@ -59,8 +59,8 @@ window.addEventListener('load', function () {
         constructor(gameWidth, gameHeight) {
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 145;
-            this.height = 150;
+            this.width = 130;
+            this.height = 130;
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById('playerImage');
@@ -98,7 +98,7 @@ window.addEventListener('load', function () {
                 const dx = (enemy.x + enemy.width / 2 - 20) - (this.x + this.width / 2)
                 const dy = (enemy.y + enemy.height / 2) - (this.y + this.height / 2)
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < enemy.width / 5 + this.width / 5) {
+                if (distance < enemy.width / 4 + this.width / 4) {
                     gameOver = true;
                 }
 
@@ -315,7 +315,7 @@ window.addEventListener('load', function () {
 
     let lastTime = 0;
     let enemyTimer = 0;
-    let enemyInterval = 200;
+    let enemyInterval = 300;
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
     function animate(timeStamp) {

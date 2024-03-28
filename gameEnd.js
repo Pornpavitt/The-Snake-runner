@@ -59,8 +59,8 @@ window.addEventListener('load', function () {
         constructor(gameWidth, gameHeight) {
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 145;
-            this.height = 150;
+            this.width = 130;
+            this.height = 130;
             this.x = 0;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById('playerImage');
@@ -239,7 +239,7 @@ window.addEventListener('load', function () {
         constructor(gameWidth, gameHeight) {
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 300;
+            this.width = 500;
             this.height = 700;
             this.image = document.getElementById('bossImage');
             this.x = this.gameWidth - this.width;
@@ -272,9 +272,9 @@ window.addEventListener('load', function () {
         context.textAlign = 'center'; // Set text alignment to center
         context.font = '30px Helvetica';
         context.fillStyle = 'black';
-        context.fillText('Press Enter To Play the Game', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
+        context.fillText('ขอบคุณที่ร่วมสนุกกับเรา กด Enter เพื่อเล่นอีกครั้ง', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
         context.fillStyle = 'white';
-        context.fillText('Press Enter To Play the Game', canvas.width / 2 + 2, canvas.height / 2 + 2);
+        context.fillText('ขอบคุณที่ร่วมสนุกกับเรา กด Enter เพื่อเล่นอีกครั้ง', canvas.width / 2 + 2, canvas.height / 2 + 2);
     }
 
     function restartGame() {
