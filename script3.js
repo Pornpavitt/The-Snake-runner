@@ -274,9 +274,9 @@ window.addEventListener('load', function () {
         context.textAlign = 'left'; // Set text alignment to center
         context.font = '30px Helvetica';
         context.fillStyle = 'black';
-        context.fillText('Level 1', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
+        context.fillText('Level 3', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
         context.fillStyle = 'white';
-        context.fillText('Level 1', canvas.width / 2 + 2, canvas.height / 2 + 2);
+        context.fillText('Level 3', canvas.width / 2 + 2, canvas.height / 2 + 2);
     }
 
     function restartGame() {
