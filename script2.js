@@ -330,7 +330,7 @@ window.addEventListener('load', function () {
         handleEnemies(deltaTime);
         displayLevel(ctx);
         displayStatusText(ctx);
-        if (score >= 10) {
+        if (score >= 20) {
             // Go to level 2 if the score is 10 or higher
             window.location.href = 'level3.html'; // Change to the URL of level 2
 

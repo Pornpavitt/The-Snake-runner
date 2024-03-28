@@ -315,7 +315,7 @@ window.addEventListener('load', function () {
 
     let lastTime = 0;
     let enemyTimer = 0;
-    let enemyInterval = 300;
+    let enemyInterval = 500;
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
     function animate(timeStamp) {
@@ -330,7 +330,7 @@ window.addEventListener('load', function () {
         handleEnemies(deltaTime);
         displayLevel(ctx);
         displayStatusText(ctx);
-        if (score >= 10) {
+        if (score >= 40) {
             // Go to level 2 if the score is 10 or higher
             window.location.href = 'gameEnd.html'; // Change to the URL of level 2
 

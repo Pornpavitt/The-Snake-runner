@@ -315,7 +315,7 @@ window.addEventListener('load', function () {
 
     let lastTime = 0;
     let enemyTimer = 0;
-    let enemyInterval = 300;
+    let enemyInterval = 200;
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
     function animate(timeStamp) {
