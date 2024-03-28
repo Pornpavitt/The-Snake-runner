@@ -332,7 +332,7 @@ window.addEventListener('load', function () {
         displayStatusText(ctx);
         if (score >= 10) {
             // Go to level 2 if the score is 10 or higher
-            window.location.href = 'level4.html'; // Change to the URL of level 2
+            window.location.href = 'gameEnd.html'; // Change to the URL of level 2
 
         } else {
             if (!gameOver) requestAnimationFrame(animate);

@@ -89,18 +89,16 @@ window.addEventListener('load', function () {
             this.frameY = 0;
         }
         draw(context) {
-            // context.strokeStyle = 'white';
-            // context.strokeRect(this.x, this.y, this.width, this.height);
             context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height,
                 this.width, this.height, this.x, this.y, this.width, this.height);
         }
         update(input, deltaTime, enemies) {
             //collision 
             enemies.forEach(enemy => {
-                const dx = (enemy.x + enemy.width / 2) - (this.x + this.width / 2)
+                const dx = (enemy.x + enemy.width / 2 - 20) - (this.x + this.width / 2)
                 const dy = (enemy.y + enemy.height / 2) - (this.y + this.height / 2)
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < enemy.width / 2 + this.width / 2) {
+                if (distance < enemy.width / 5 + this.width / 5) {
                     gameOver = true;
                 }
 
@@ -182,23 +180,27 @@ window.addEventListener('load', function () {
         constructor(gameWidth, gameHeight) {
             this.gameWidth = gameWidth;
             this.gameHeight = gameHeight;
-            this.width = 130;
-            this.height = 119;
+            this.weightLeft = 50;
+            this.width = 125;
+            this.height = 109;
             this.image = document.getElementById('enemyImage');
             this.x = this.gameWidth - 300;
             this.y = this.gameHeight - this.height;
             this.y = Math.random() * (this.gameHeight - this.height);
             this.frameX = 0;
             this.maxFrame = 0;
-            this.fps = 0;
+            this.fps = 5;
             this.frameTimer = 0;
             this.frameInterval = 1000 / this.fps;
             this.speed = 8;
             this.markedForDeletion = false;
         }
         draw(context) {
-            // context.strokeStyle = 'white';
-            // context.strokeRect(this.x,this.y,this.width,this.height);
+            context.lineWidth= 5;
+            context.strokeStyle = 'white';
+            // context.beginpath();
+            context.arc(this.x + this.width/2 - 20, this.y + this.height/2, this.width/3, 0,Math.PI *2);
+            // context.stroke(); 
             context.drawImage(this.image, this.frameX * this.width, 0, this.width, this.height,
                 this.x, this.y, this.width, this.height);
         }
@@ -261,9 +263,9 @@ window.addEventListener('load', function () {
         if (gameOver) {
             context.textAlign = 'center';
             context.fillStyle = 'black';
-            context.fillText('GAME OVER Press Enter to Restart!', canvas.width / 2, 200); // Center the text horizontally and vertically
+            context.fillText('GAME OVER กด Enter เพื่อเริ่มใหม่!', canvas.width / 2, 200); // Center the text horizontally and vertically
             context.fillStyle = 'white';
-            context.fillText('GAME OVER Press Enter to Restart!', canvas.width / 2 + 2, 202);
+            context.fillText('GAME OVER กด Enter เพื่อเริ่มใหม่!', canvas.width / 2 + 2, 202);
         }
     }
 
@@ -272,9 +274,9 @@ window.addEventListener('load', function () {
         context.textAlign = 'left'; // Set text alignment to center
         context.font = '30px Helvetica';
         context.fillStyle = 'black';
-        context.fillText('Level 2', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
+        context.fillText('Level 1', canvas.width / 2, canvas.height / 2); // Center the text horizontally and vertically
         context.fillStyle = 'white';
-        context.fillText('Level 2', canvas.width / 2 + 2, canvas.height / 2 + 2);
+        context.fillText('Level 1', canvas.width / 2 + 2, canvas.height / 2 + 2);
     }
 
     function restartGame() {
@@ -313,7 +315,7 @@ window.addEventListener('load', function () {
 
     let lastTime = 0;
     let enemyTimer = 0;
-    let enemyInterval = 150;
+    let enemyInterval = 300;
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
     function animate(timeStamp) {
@@ -328,7 +330,7 @@ window.addEventListener('load', function () {
         handleEnemies(deltaTime);
         displayLevel(ctx);
         displayStatusText(ctx);
-        if (score >= 5) {
+        if (score >= 10) {
             // Go to level 2 if the score is 10 or higher
             window.location.href = 'level3.html'; // Change to the URL of level 2
 
